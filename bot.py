@@ -3,12 +3,11 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, WebAppI
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
 # ========================
-# CONFIG (FULL, READY)
+# CONFIG (ISI SENDIRI)
 # ========================
 TOKEN = "8707863883:AAGzZHHBvUKGfajeSZtcR5ImY6fCcgU3k8o"
 WEB_URL = "https://resilient-cascaron-1b9f14.netlify.app/"
 PORT = int(os.environ.get("PORT", 8443))
-# Railway URL (otomatis dari environment Railway)
 RAILWAY_URL = os.environ.get("RAILWAY_STATIC_URL", "https://earnflowbot-production.up.railway.app")
 
 # ========================
