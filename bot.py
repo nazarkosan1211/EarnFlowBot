@@ -3,7 +3,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, WebAppI
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
 # ========================
-# CONFIG (ISI SENDIRI)
+# CONFIG - GANTI TOKEN & WEB_URL SAJA
 # ========================
 TOKEN = "8707863883:AAGzZHHBvUKGfajeSZtcR5ImY6fCcgU3k8o"
 WEB_URL = "https://resilient-cascaron-1b9f14.netlify.app/"
@@ -16,7 +16,6 @@ RAILWAY_URL = os.environ.get("RAILWAY_STATIC_URL", "https://earnflowbot-producti
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     url = WEB_URL
 
-    # Optional referral
     if context.args:
         arg = context.args[0]
         if arg.startswith("ref_"):
