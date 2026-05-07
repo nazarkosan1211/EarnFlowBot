@@ -5,7 +5,7 @@ from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 # ========================
 # CONFIG - GANTI TOKEN & WEB_URL SAJA
 # ========================
-TOKEN = "8707863883:AAGzZHHBvUKGfajeSZtcR5ImY6fCcgU3k8o"
+TOKEN = "8707863883:AAGePtyGNttlo3EfLT1GXGKlBqFY9TBQ5G0"
 WEB_URL = "https://resilient-cascaron-1b9f14.netlify.app/"
 PORT = int(os.environ.get("PORT", 8443))
 RAILWAY_URL = os.environ.get("RAILWAY_STATIC_URL", "https://earnflowbot-production.up.railway.app")
