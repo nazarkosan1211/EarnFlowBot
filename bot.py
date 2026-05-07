@@ -7,6 +7,7 @@ from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 # ========================
 TOKEN = "8707863883:AAGePtyGNttlo3EfLT1GXGKlBqFY9TBQ5G0"
 WEB_URL = "https://resilient-cascaron-1b9f14.netlify.app/"
+
 PORT = int(os.environ.get("PORT", 8443))
 RAILWAY_URL = os.environ.get("RAILWAY_STATIC_URL", "https://earnflowbot-production.up.railway.app")
 
@@ -20,6 +21,8 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         if arg.startswith("ref_"):
             ref_id = arg.replace("ref_", "")
             url = WEB_URL + "?ref=" + ref_id
+
+    print("WEBAPP URL:", url)
 
     keyboard = [
         [InlineKeyboardButton("🚀 Open EarnFlow", web_app=WebAppInfo(url=url))]
@@ -39,11 +42,15 @@ app.add_handler(CommandHandler("start", start))
 # WEBHOOK SETUP
 # ========================
 WEBHOOK_URL = f"{RAILWAY_URL}/{TOKEN}"
-print("Webhook URL:", WEBHOOK_URL)
+print("Webhook URL set to:", WEBHOOK_URL)
 
+# ========================
+# RUN BOT 24/7
+# ========================
 app.run_webhook(
     listen="0.0.0.0",
     port=PORT,
     webhook_url=WEBHOOK_URL
 )
+
 print("Bot running 24/7 on Railway...")
